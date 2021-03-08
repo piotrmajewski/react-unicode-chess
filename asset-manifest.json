@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-unicode-chess/static/css/main.69d21124.chunk.css",
+    "main.js": "/react-unicode-chess/static/js/main.cba02531.chunk.js",
+    "main.js.map": "/react-unicode-chess/static/js/main.cba02531.chunk.js.map",
+    "runtime-main.js": "/react-unicode-chess/static/js/runtime-main.9c656cc9.js",
+    "runtime-main.js.map": "/react-unicode-chess/static/js/runtime-main.9c656cc9.js.map",
+    "static/js/2.33a4212f.chunk.js": "/react-unicode-chess/static/js/2.33a4212f.chunk.js",
+    "static/js/2.33a4212f.chunk.js.map": "/react-unicode-chess/static/js/2.33a4212f.chunk.js.map",
+    "static/js/3.233ae06e.chunk.js": "/react-unicode-chess/static/js/3.233ae06e.chunk.js",
+    "static/js/3.233ae06e.chunk.js.map": "/react-unicode-chess/static/js/3.233ae06e.chunk.js.map",
+    "index.html": "/react-unicode-chess/index.html",
+    "static/css/main.69d21124.chunk.css.map": "/react-unicode-chess/static/css/main.69d21124.chunk.css.map",
+    "static/js/2.33a4212f.chunk.js.LICENSE.txt": "/react-unicode-chess/static/js/2.33a4212f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c656cc9.js",
+    "static/js/2.33a4212f.chunk.js",
+    "static/css/main.69d21124.chunk.css",
+    "static/js/main.cba02531.chunk.js"
+  ]
+}
