@@ -1,0 +1,31 @@
+.Piece {
+    font-family: Arial, Helvetica;
+    font-size: 60px;
+  }
+  
+  .Piece:hover {
+    cursor: pointer;
+  }
+  
+  .Field {
+    float: left;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .Field_White {
+    background-color: white;
+  }
+  
+  .Field_Black {
+    background-color: paleturquoise;
+  }
+  
+  .Field_Selected {
+    background-color: steelblue;
+  }
+  
+  .Row {
+    clear: both;
+  }
+  
