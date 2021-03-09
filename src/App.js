@@ -11,52 +11,65 @@ const [pb, rb, nb, bb, qb, kb] = types.map(type => ({
   piece: type,
   color: "black"
 }));
+const initialPosition = [
+  [rb, nb, bb, qb, kb, bb, nb, rb],
+  [pb, pb, pb, pb, pb, pb, pb, pb],
+  [{}, {}, {}, {}, {}, {}, {}, {}],
+  [{}, {}, {}, {}, {}, {}, {}, {}],
+  [{}, {}, {}, {}, {}, {}, {}, {}],
+  [{}, {}, {}, {}, {}, {}, {}, {}],
+  [pw, pw, pw, pw, pw, pw, pw, pw],
+  [rw, nw, bw, qw, kw, bw, nw, rw]
+];
 
 class App extends Component {
   state = {
-    current: [
-      [rb, nb, bb, qb, kb, bb, nb, rb],
-      [pb, pb, pb, pb, pb, pb, pb, pb],
-      [{}, {}, {}, {}, {}, {}, {}, {}],
-      [{}, {}, {}, {}, {}, {}, {}, {}],
-      [{}, {}, {}, {}, {}, {}, {}, {}],
-      [{}, {}, {}, {}, {}, {}, {}, {}],
-      [pw, pw, pw, pw, pw, pw, pw, pw],
-      [rw, nw, bw, qw, kw, bw, nw, rw]
-    ],
-    selected: { row: undefined, column: undefined }
+    currentPosition: initialPosition,
+    selected: undefined
   };
 
   onClick = field => {
-    if (
-      this.state.selected.row !== undefined &&
-      this.state.selected.column !== undefined
-    ) {
-      const next = this.state.current;
+    if (this.state.selected !== undefined)
+    {
+      // there is a piece selected previously,
+      // so this is an attempt to move it
       if (
-        field.row !== this.state.selected.row ||
-        field.column !== this.state.selected.column
-      ) {
-        next[field.row][field.column] = this.state.current[
+        field.row === this.state.selected.row &&
+        field.column === this.state.selected.column
+      )
+      {
+        // the selected pieced was clicked again
+        // - unselect it
+        this.setState({
+          selected: undefined
+        });
+      }
+      else
+      {
+        const nextPosition = this.state.currentPosition;
+        // TODO: validate move
+        nextPosition[field.row][field.column] = this.state.currentPosition[
           this.state.selected.row
         ][this.state.selected.column];
-        next[this.state.selected.row][this.state.selected.column] = {};
+        nextPosition[this.state.selected.row][this.state.selected.column] = {};
+        this.setState({
+          currentPosition: nextPosition,
+          selected: undefined
+        });
       }
-      this.setState({
-        current: next,
-        selected: { row: undefined, column: undefined }
-      });
-    } else if (this.state.current[field.row][field.column].piece) {
+    }
+    else if (this.state.currentPosition[field.row][field.column].piece) {
+      // a clicked piece should be selected
       this.setState({ selected: { row: field.row, column: field.column } });
     }
   };
 
   render() {
-    const { current, selected } = this.state;
+    const { currentPosition, selected } = this.state;
     return (
       <div className="App">
         <Chessboard
-          currentState={current}
+          currentPosition={currentPosition}
           selected={selected}
           handleClick={this.onClick}
         />

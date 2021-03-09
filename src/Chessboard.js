@@ -33,7 +33,7 @@ const Field = ({
   handleClick
 }) => (
   <div
-    className={rowNumber === selected.row && columnNumber === selected.column
+    className={selected && rowNumber === selected.row && columnNumber === selected.column
       ? "Field Field_Selected"
       : fieldColor === "black" ? "Field Field_Black" : "Field Field_White"}
     onClick={() => handleClick({ row: rowNumber, column: columnNumber })}
@@ -58,8 +58,8 @@ const Row = ({ row, rowNumber, selected, handleClick }) => (
   </div>
 );
 
-const Chessboard = ({ currentState, selected, handleClick }) =>
-  currentState.map((row, rowNumber) => {
+const Chessboard = ({ currentPosition, selected, handleClick }) =>
+  currentPosition.map((row, rowNumber) => {
     return (
       <Row
         key={rowNumber}
