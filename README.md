@@ -1,6 +1,6 @@
 # React Unicode Chess
 
-A lightweight [chess](https://en.wikipedia.org/wiki/Chess) client build with [React](https://reactjs.org/) and [Unicode font pieces](https://en.wikipedia.org/wiki/Chess_symbols_in_Unicode)
+A lightweight [chess](https://en.wikipedia.org/wiki/Chess) client build with [React](https://reactjs.org/) and [Unicode font pieces](https://en.wikipedia.org/wiki/Chess_symbols_in_Unicode). See the current build here: [https://piotrmajewski.github.io/react-unicode-chess/](https://piotrmajewski.github.io/react-unicode-chess/)
 
 ## TODO
 
@@ -10,7 +10,7 @@ A lightweight [chess](https://en.wikipedia.org/wiki/Chess) client build with [Re
 * Peer-to-peer online play
 * A chess clock
 * More visualisation, undo, statistics
-* Connecting to a chess server ([https://lichess.org/api]?)
+* Connecting to a chess server ([https://lichess.org/api](https://lichess.org/api)?)
 
 ## How to build and start an application
 
